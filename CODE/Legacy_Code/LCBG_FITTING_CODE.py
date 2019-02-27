@@ -29,7 +29,7 @@ def schechter_func_scipy(x,phistar,mstar,alpha):
 	return (0.4*np.log(10)*phistar)*(10**(0.4*(alpha+1)*(mstar-x)))*(np.e**(-np.power(10,0.4*(mstar-x))))
 
 def read_lf_file(lcbgfile,galfile):
-	LMBinMid,LMBINAVE,LLumFunc,LLumFuncErr,LLogErr,LNGal,LAveCMV,LAveWeight=np.loadtxt(lcbgfile,unpack=True,skiprows=1)
+	Index,LMBinMid,LMBINAVE,LLumFunc,LLumFuncErr,LLogErr,LNGal,LAveCMV,LAveWeight=np.loadtxt(lcbgfile,unpack=True,skiprows=1)
 	MBinMid,MBINAVE,LumFunc,LumFuncErr,LogErr,NGal,AveCMV,AveWeight=np.loadtxt(galfile,unpack=True,skiprows=1)
 	LCBGPARAMS=np.stack((LMBinMid,LMBINAVE,LLumFunc,LLumFuncErr,LLogErr,LNGal,LAveCMV,LAveWeight))
 	GALPARAMS=np.stack((MBinMid,MBINAVE,LumFunc,LumFuncErr,LogErr,NGal,AveCMV,AveWeight))
